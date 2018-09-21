@@ -2,8 +2,11 @@ def reformat_languages(languages)
   new_hash = {}
   languages.each { |style, languageInfo| 
     languageInfo.each { |key, value|
-      
-      new_hash[key] = {type: value[:type], style: [style]}
+      if !new_hash.has_key?(key)
+        new_hash[key] = {type: value[:type], style: [style]}
+      else
+        new_hash[key][:style] << style
+      end
     }
   }
   new_hash
