@@ -5,6 +5,7 @@ def reformat_languages(languages)
       new_hash[key] = {type: value[:type], style: [style]}
     }
   }
+  new_hash
 end
 
 
